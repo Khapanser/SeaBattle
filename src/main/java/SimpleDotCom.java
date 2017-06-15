@@ -17,12 +17,12 @@ class SimpleDotCom {
 
     public String checkYourself (String stringGuess){
         int guess = Integer.parseInt(stringGuess);
-        String result = "Мимо";
+        String result = "Away";
         int CLK = 0;
         for (int cell : locationCells)  {
 
             if (guess == cell)  {
-                result = "Попал";
+                result = "Hit";
                 numOfHits++;
                 // Необходимо удалить из массива номер поля, в который уже попадали.
                // locationCells[CLK] = 0;
@@ -36,7 +36,7 @@ class SimpleDotCom {
 
 
         if (locationCells.size()==0) {
-            result = "Попал и потопил";
+            result = "Killed";
         }
         System.out.println(result);
         return result;

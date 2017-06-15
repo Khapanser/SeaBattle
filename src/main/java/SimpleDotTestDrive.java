@@ -14,7 +14,7 @@ public class SimpleDotTestDrive {
         String userGuess = null;
         while (true)
         {
-            System.out.println("Введите цифру от 1 до 10");
+            System.out.println("Enter a number from  1 to 10");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
             try {
@@ -27,11 +27,11 @@ public class SimpleDotTestDrive {
             if (validator.verifyLastName(userGuess))
                 dot.checkYourself(userGuess);
             else
-                System.out.println("Цифру");
+                System.out.println("Number");
 
             if (dot.numOfHits == 3)
             {
-                System.out.println("Все потоплены");
+                System.out.println("Win!");
                 break;
             }
         }
