@@ -27,7 +27,7 @@ public class SimpleDotTestDrive {
             if (validator.verifyLastName(userGuess))
                 dot.checkYourself(userGuess);
             else
-                System.out.println("Number");
+                System.out.println("Enter a number...");
 
             if (dot.numOfHits == 3)
             {

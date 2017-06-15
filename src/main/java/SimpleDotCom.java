@@ -25,8 +25,8 @@ class SimpleDotCom {
                 result = "Hit";
                 numOfHits++;
                 // Необходимо удалить из массива номер поля, в который уже попадали.
-               // locationCells[CLK] = 0;
-                locationCells.remove(cell);
+                Integer deleter = guess;
+                locationCells.remove(deleter);
 
 
                 break;
