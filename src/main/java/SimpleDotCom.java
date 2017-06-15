@@ -18,20 +18,18 @@ class SimpleDotCom {
     public String checkYourself (String stringGuess){
         int guess = Integer.parseInt(stringGuess);
         String result = "Away";
-        int CLK = 0;
         for (int cell : locationCells)  {
 
             if (guess == cell)  {
                 result = "Hit";
                 numOfHits++;
-                // Необходимо удалить из массива номер поля, в который уже попадали.
+                // Remove hited fileds.
                 Integer deleter = guess;
                 locationCells.remove(deleter);
 
 
                 break;
             }
-            CLK++;
         }
 
 

@@ -2,7 +2,7 @@ package main.java;
 
 
 public class GuessValidator {
-    // валидация, что введенное число действительно является числом.
+    // Check for a number
     public boolean verifyLastName(String lname)
     {
         lname = lname.trim();

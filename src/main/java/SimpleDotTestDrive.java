@@ -7,7 +7,6 @@ public class SimpleDotTestDrive {
 
     public static void main (String[] args) {
         SimpleDotCom dot = new SimpleDotCom();
-    //    int[] locations = {2,3,4};
         ShipSetter Ship = new ShipSetter();
         ArrayList<Integer> list = Ship.ShipSet();
         dot.setLocationCells(list);
@@ -35,8 +34,6 @@ public class SimpleDotTestDrive {
                 break;
             }
         }
-
-//	String result = dot.checkYourself(userGuess);
 
     }
 }
