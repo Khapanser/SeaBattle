@@ -5,17 +5,15 @@ import java.util.ArrayList;
 
 class SimpleDotCom {
     ArrayList<Integer> locationCells;
-    int numOfHits;
-
-    {
-        numOfHits = 0;
-    }
+    static int numOfHits = 0;
+    static int SCORE = 0;
 
     public void setLocationCells (ArrayList<Integer> locs){
         locationCells = locs;
     }
 
     public String checkYourself (String stringGuess){
+       SCORE++;
         int guess = Integer.parseInt(stringGuess);
         String result = "Away";
         for (int cell : locationCells)  {
@@ -34,7 +32,7 @@ class SimpleDotCom {
 
 
         if (locationCells.size()==0) {
-            result = "Killed";
+            result = "Killed for "+ SCORE +" moves";
         }
         System.out.println(result);
         return result;
