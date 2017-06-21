@@ -6,6 +6,10 @@ import java.util.ArrayList;
 public class SimpleDotTestDrive {
 
     public static void main (String[] args) {
+
+
+        //TEST START
+
         SimpleDotCom dot = new SimpleDotCom();
         ShipSetter Ship = new ShipSetter();
         ArrayList<Integer> list = Ship.ShipSet();
