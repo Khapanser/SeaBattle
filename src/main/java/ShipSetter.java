@@ -1,9 +1,6 @@
 package main.java;
-import java.lang.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
-import java.io.*;
 
 public class ShipSetter {
 
@@ -41,14 +38,17 @@ public class ShipSetter {
 
     //TODO Find "ShipLength" random number;
     public ArrayList<Integer> CheckLocations_X ( int ShipLength){
-        int start = (int) (Math.random()*9);   // find start num
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        for (int i = 0; i < ShipLength; i++)
-        {
-            list.add(start+i);
-            System.out.println((i+1)+"th element -->"+(start+i));
+        int start = 0;
+        while (start == 0) {
+             start = (int) (Math.random() * 9);   // find start num
         }
-        return list;
+            ArrayList<Integer> list = new ArrayList<Integer>();
+            for (int i = 0; i < ShipLength; i++) {
+                list.add(start + i);
+                System.out.println((i + 1) + "th element -->" + (start + i));
+            }
+            return list;
+
     }
 
     //TODO Find 1 random number
