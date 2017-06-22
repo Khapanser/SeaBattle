@@ -19,7 +19,7 @@ public class SimpleDotTestDrive {
         //TODO написать код чтения двух чисел с клавиатуры и передачи их в checkYourself
         String userGuess1 = null;
         String userGuess2 = null;
-
+        boolean orient = ship.Orientation();
         while (true)
         {
             //ВОДИМ ПЕРВОЕ ЧИСЛО
@@ -45,8 +45,7 @@ public class SimpleDotTestDrive {
             int guess2 = Integer.parseInt(userGuess2);
 
             //ЗАКИДЫВАЕМ В ПРОВЕРКУ ОБА ЧИСЛА И САМ КОРАБЛЬ
-
-            dot.checkYourself(guess1,guess2, ship);
+            dot.checkYourself(guess1,guess2, orient);
 
 
 // ВРЕМЕННЫЙ КОД:

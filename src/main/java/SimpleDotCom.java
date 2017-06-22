@@ -9,30 +9,48 @@ class SimpleDotCom {
     static int numOfHits = 0;
     static int SCORE = 0;
 
+
   //  public SimpleDotCom(ShipSetter)
   public void setLocationCells (HashMap<Integer, Integer> locs){
       this.locationCells = locs;
   }
 
-  public String checkYourself (int a, int b, ShipSetter ship)
+  public String checkYourself (int a, int b, boolean orient)
     {
+        //TODO пустой ли массив
+
+
         for (HashMap.Entry<Integer, Integer> pair : this.locationCells.entrySet())
         {
-            if (!ship.Orientation())
-            {
+            if (!orient)
+           {
 
-                if (pair.getKey()==a && pair.getValue()==b)
+                if (pair.getKey()==a && pair.getValue()==b) {
+
+                    System.out.println("HIT_1");
                     return "HIT";
+                }
                 else
+                {
+                    System.out.println("AWAY_1");
                     return "AWAY" ;
+                }
+
             }
             else
             {
                 if (pair.getKey() == b && pair.getValue() == a)
+                {
+                    System.out.println("HIT_2");
                     return "HIT";
+                }
                 else
-                    return "AWAY";
+                {
+                    System.out.println("AWAY_2");
+                    return "AWAY" ;
+                }
             }
+
         }
         return "NOT WORK";
     }

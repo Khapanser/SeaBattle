@@ -31,10 +31,12 @@ public class ShipSetter {
             i = (int) (Math.random() * 3);
             if (i == 1) {
                 ans = true;     //Horizontal
+                System.out.println("Horizontal");
                 trigger = true;
             }
             else if (i == 2 ){
                 ans = false;    //Vertical
+                System.out.println("Vertical");
                 trigger = true;
             }
         }
