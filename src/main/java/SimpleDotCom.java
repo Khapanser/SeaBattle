@@ -3,6 +3,9 @@ package main.java;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.io.*;
+import java.util.Iterator;
+import java.util.Map;
 
 class SimpleDotCom {
     HashMap<Integer, Integer> locationCells;
@@ -17,16 +20,15 @@ class SimpleDotCom {
 
   public String checkYourself (int a, int b, boolean orient)
     {
-        //TODO пустой ли массив
 
+        //TEST
 
-        for (HashMap.Entry<Integer, Integer> pair : this.locationCells.entrySet())
-        {
-            if (!orient)
-           {
-
-                if (pair.getKey()==a && pair.getValue()==b) {
-
+        Iterator<HashMap.Entry<Integer, Integer>> iterator1 = locationCells.entrySet().iterator();
+        if (!orient) {
+            while (iterator1.hasNext()) {
+                HashMap.Entry<Integer, Integer> pair1 = iterator1.next();
+                if (pair1.getKey() == a && pair1.getValue() == b) {
+                    iterator1.remove();
                     System.out.println("HIT_1");
                     return "HIT";
                 }
@@ -35,12 +37,15 @@ class SimpleDotCom {
                     System.out.println("AWAY_1");
                     return "AWAY" ;
                 }
-
             }
-            else
-            {
-                if (pair.getKey() == b && pair.getValue() == a)
-                {
+        }
+
+        else
+        {
+            while (iterator1.hasNext()) {
+                HashMap.Entry<Integer, Integer> pair1 = iterator1.next();
+                if (pair1.getKey() == b && pair1.getValue() == a) {
+                    iterator1.remove();
                     System.out.println("HIT_2");
                     return "HIT";
                 }
@@ -50,44 +55,10 @@ class SimpleDotCom {
                     return "AWAY" ;
                 }
             }
-
         }
+
         return "NOT WORK";
-    }
 
+        //TEST
 
-
-
-
-
-
-   /* public String checkYourself (String stringGuess){
-       SCORE++;
-        int guess = Integer.parseInt(stringGuess);
-        String result = "Away";
-        for (int cell : locationCells)  {
-
-            if (guess == cell)  {
-                result = "Hit";
-                numOfHits++;
-                // Remove hited fileds.
-                Integer deleter = guess;
-                locationCells.remove(deleter);
-
-
-                break;
-            }
-        }
-
-
-        if (locationCells.size()==0) {
-            result = "Killed for "+ SCORE +" moves";
-        }
-        System.out.println(result);
-        return result;
-
-    }
-
-*/
-
-}
+    }}

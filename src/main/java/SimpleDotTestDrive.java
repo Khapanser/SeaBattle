@@ -44,12 +44,13 @@ public class SimpleDotTestDrive {
             }
             int guess2 = Integer.parseInt(userGuess2);
 
-            //ЗАКИДЫВАЕМ В ПРОВЕРКУ ОБА ЧИСЛА И САМ КОРАБЛЬ
+            //ЗАКИДЫВАЕМ В ПРОВЕРКУ ОБА ЧИСЛА И ОРИЕНТИРОВКУ КОРАБЛЯ
             dot.checkYourself(guess1,guess2, orient);
 
 
 // ВРЕМЕННЫЙ КОД:
-            if (SimpleDotCom.numOfHits == 3)
+            //TODO пустой ли массив
+            if (dot.locationCells.isEmpty())
             {
                 System.out.println("Win!");
                 break;
@@ -57,35 +58,5 @@ public class SimpleDotTestDrive {
 //ВРЕМЕННЫЙ КОД
         }
 
-
-   /*     SimpleDotCom dot = new SimpleDotCom();
-        ShipSetter Ship = new ShipSetter();
-        ArrayList<Integer> list = Ship.ShipSet();
-        dot.setLocationCells(list);
-        String userGuess = null;
-        while (true)
-        {
-            System.out.println("Enter a number from  1 to 10");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-            try {
-                userGuess = reader.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            GuessValidator validator = new GuessValidator();
-
-//            if (validator.verifyLastName(userGuess))  //validator OFF
-                dot.checkYourself(userGuess);
- //           else
-  //              System.out.println("Enter a number...");
-
-            if (SimpleDotCom.numOfHits == 3)
-            {
-                System.out.println("Win!");
-                break;
-            }
-        }
-*/
     }
 }
