@@ -1,7 +1,9 @@
 package main.java;
 import java.lang.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
+import java.io.*;
 
 public class ShipSetter {
 
@@ -9,9 +11,9 @@ public class ShipSetter {
     private static ArrayList <Integer> BusyFields = new ArrayList<Integer>();
 
     private int ShipLength;
-    private boolean Orient = false;   //Vertical
-    private ArrayList<Integer> Loc_X = new ArrayList<Integer>();
-    private int Loc_1 = 0;
+  //  private boolean Orient = false;   //Vertical
+  //  private ArrayList<Integer> Loc_X = new ArrayList<Integer>();
+  //  private int Loc_1 = 0;
 
 
     //Constructor for ShipLength
@@ -20,7 +22,7 @@ public class ShipSetter {
         this.ShipLength = ShipLength;
     }
 
-    // Check Hor or Vert orientation of ship
+    //TODO  Check Hor or Vert orientation of ship
     public boolean Orientation (){
         int i = 10;
         boolean ans = true;      //Horizontal
@@ -36,7 +38,7 @@ public class ShipSetter {
                 trigger = true;
             }
         }
-        this.Orient =  ans;
+     //   this.Orient =  ans;
         return ans;
     }
 
@@ -49,7 +51,7 @@ public class ShipSetter {
             list.add(start+i);
             System.out.println((i+1)+"th element -->"+(start+i));
         }
-        this.Loc_X = list;
+      //  this.Loc_X = list;
         return list;
     }
 
@@ -63,11 +65,22 @@ public class ShipSetter {
                 trigger = true;
         }
         System.out.println("start = "+start);
-        this.Loc_1 = start;
+      //  this.Loc_1 = start;
         return start;
     }
 
+        //TODO Return coordinates of the ship
+    //НАДО ДОБАВИТЬ ПРОВЕРКУ ОРИЕНТАЦИИ КОРАБЛЯ В SimpleDotCom
 
+    public HashMap<Integer, Integer> Coordinates (){
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        int b = this.CheckLocations_1();
+            for (int a: CheckLocations_X(ShipLength)) {
+               map.put(a,b);
+               System.out.println("цель - "+a+" / "+b); //
+            }
+            return map;
+    }
 
  /*   public ArrayList<Integer> ShipSet ( int ShipLength)
         {

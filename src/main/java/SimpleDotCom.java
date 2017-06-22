@@ -2,17 +2,48 @@ package main.java;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 class SimpleDotCom {
-    ArrayList<Integer> locationCells;
+    HashMap<Integer, Integer> locationCells;
     static int numOfHits = 0;
     static int SCORE = 0;
 
-    public void setLocationCells (ArrayList<Integer> locs){
-        locationCells = locs;
+  //  public SimpleDotCom(ShipSetter)
+  public void setLocationCells (HashMap<Integer, Integer> locs){
+      this.locationCells = locs;
+  }
+
+  public String checkYourself (int a, int b, ShipSetter ship)
+    {
+        for (HashMap.Entry<Integer, Integer> pair : this.locationCells.entrySet())
+        {
+            if (!ship.Orientation())
+            {
+
+                if (pair.getKey()==a && pair.getValue()==b)
+                    return "HIT";
+                else
+                    return "AWAY" ;
+            }
+            else
+            {
+                if (pair.getKey() == b && pair.getValue() == a)
+                    return "HIT";
+                else
+                    return "AWAY";
+            }
+        }
+        return "NOT WORK";
     }
 
-    public String checkYourself (String stringGuess){
+
+
+
+
+
+
+   /* public String checkYourself (String stringGuess){
        SCORE++;
         int guess = Integer.parseInt(stringGuess);
         String result = "Away";
@@ -39,6 +70,6 @@ class SimpleDotCom {
 
     }
 
-
+*/
 
 }
