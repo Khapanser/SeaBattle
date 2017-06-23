@@ -33,11 +33,27 @@ public class SimpleDotTestDrive {
             }
             String guess1string = userGuess1.substring(0,1);
             String guess2str = userGuess1.substring(1);
-            int guess2int = Integer.parseInt(guess2str);
+            //try-catch for NumberFormatException
+            int guess2int = 0;
+            try {
+                guess2int = Integer.parseInt(guess2str);
+            }
+            catch (NumberFormatException ex)
+            {
+                System.out.println("guess2int missing value --> Wrong number format");
+            }
 
             LitToNum litTonum = new LitToNum();
             litTonum.Setter();
-            int guess1int = litTonum.Replacer(guess1string);
+            //
+            int guess1int = 0;
+            try {
+                guess1int = litTonum.Replacer(guess1string);
+            }
+            catch (NumberFormatException ex)
+            {
+                System.out.println("guess1int missing value --> Wrong number format");
+            }
             System.out.println(userGuess1 +" mean --> " +guess1int);
 
             dot.checkYourself(guess1int,guess2int, orient);
