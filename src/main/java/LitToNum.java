@@ -10,7 +10,7 @@ import java.util.Map;
 public class LitToNum {
 
     private static HashMap<String, Integer> map = new HashMap<String, Integer>();
-    public void Setter(){
+    public LitToNum(){
         map.put("a",1);
         map.put("b",2);
         map.put("c",3);

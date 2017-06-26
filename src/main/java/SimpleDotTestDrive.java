@@ -9,9 +9,13 @@ public class SimpleDotTestDrive {
 
     public static void main (String[] args) {
 
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        //TODO HumanPosition:
+        HumanPosition HP = new HumanPosition();
+        HP.AddPosition();
 
         //TEST START
-
         ShipSetter ship = new ShipSetter(3);
         SimpleDotCom dot = new SimpleDotCom();
         HashMap<Integer, Integer> map = ship.Coordinates();  //Записали в карту координаты
@@ -25,7 +29,7 @@ public class SimpleDotTestDrive {
 
 
             //TEST считываем сразу и число и букву
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
             try {
                 userGuess1 = reader.readLine();
             } catch (IOException e) {
@@ -44,7 +48,7 @@ public class SimpleDotTestDrive {
             }
 
             LitToNum litTonum = new LitToNum();
-            litTonum.Setter();
+        //    litTonum.Setter();
             //
             int guess1int = 0;
             try {
