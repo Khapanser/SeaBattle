@@ -14,6 +14,8 @@ public class SimpleDotTestDrive {
         //TODO HumanPosition:
         HumanPosition HP = new HumanPosition();
         HP.AddPosition();
+        AIChoice aichoice = new AIChoice();
+
 
         //TEST START
         ShipSetter ship = new ShipSetter(3);
@@ -24,6 +26,7 @@ public class SimpleDotTestDrive {
         String userGuess1 = null;
         String userGuess2 = null;
         boolean orient = ship.Orientation();
+        boolean hitORaway;
         while (true)
         {
 
@@ -62,7 +65,24 @@ public class SimpleDotTestDrive {
 
             dot.checkYourself(guess1int,guess2int, orient);
 
-// ВРЕМЕННЫЙ КОД:
+//Part for AI
+            System.out.println("AI trying..");
+            aichoice.GetValueTest(AIChoice.map);
+            AIHitOrAway aihitoraway = new AIHitOrAway();
+            //TODO Rebuild
+
+            hitORaway = aihitoraway.AIHit(AIChoice.Lit, AIChoice.Num, HumanPosition.humanMAP);
+            if (hitORaway)
+                    System.out.println("AI_HIT!");
+            else
+                System.out.println("AI_AWAY!");
+
+            //Check if human lose:
+            if (!aichoice.ArrayNotNullChecker())
+            {
+                System.out.println("Lose!");
+                break;
+            }
             //TODO пустой ли массив
             if (dot.locationCells.isEmpty())
             {

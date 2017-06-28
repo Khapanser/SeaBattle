@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class HumanPosition {
-
+    public static HashMap<Integer,Integer> humanMAP = new HashMap<>();
     private static int CLK = 1;
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -18,7 +18,8 @@ public class HumanPosition {
 
     public void AddPosition()
     {
-        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+        HashMap<Integer,Integer> humanMAPP = new HashMap<Integer,Integer>();
+
         int a = 0;
         int b = 0;
         LitToNum litToNum = new LitToNum();
@@ -29,6 +30,7 @@ public class HumanPosition {
             try {
                 a = Integer.parseInt(reader.readLine());
                 b = litToNum.Replacer(reader.readLine());
+                System.out.println("Пробуем положить в массив значения а="+a +"  и  b=" +b);
                 }
             catch (IOException e)
                 {
@@ -36,7 +38,7 @@ public class HumanPosition {
                 }
                 try
                 {
-                map.put(a, b);
+                    humanMAP.put(a, b);
                 }
                 catch (NullPointerException ex)
                 {
@@ -44,5 +46,6 @@ public class HumanPosition {
                 }
             CLK++;
         }
+
     }
 }

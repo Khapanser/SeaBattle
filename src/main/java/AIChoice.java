@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class AIChoice {
-             private static ArrayList<Integer> map;
-             static int CLK = 0;
+            public static ArrayList<Integer> map = new ArrayList<>();
+            private int CLK = 0;
+            public static int Lit = 0;
+            public static int Num = 0;
 
             //TODO massive [0..99]
             //TODO Mixing with Collection.shuffle
@@ -18,21 +20,29 @@ public class AIChoice {
         }
 
         Collections.shuffle(map);
+        System.out.println("Размер массива: "+ map.size());
+    /*    for (int j = 0; j < map.size(); j++) {
+            System.out.println(j+" элемент!"+map.get(j));
+
+        }*/
     }
 
     //TODO Get "random" value (repeat while not hit)
-    public int GetValueTest(ArrayList<Integer> map)
+    public void GetValueTest(ArrayList<Integer> map)
     {
         int ans = 0;
-        ans = map.get(CLK);
+        ans = map.get(0);
         //TODO parsing "ans" for checking HIT (x%10--> line, x-(x%10) --> column)
         //a/b
-        int Lit = ans/10;
+        Lit = ans/10;
+        System.out.println("AI LIT = "+ Lit);
         //a%b
-        int Num = ans%10;
-        map.remove(CLK);
+        Num = ans%10;
+        System.out.println("AI NUM = "+ Num);
+        map.remove(0);
         CLK++;
-        return ans;
+        System.out.println("Now, CLK = "+ CLK);
+       // return ans;
     }
 
     public boolean ArrayNotNullChecker()
