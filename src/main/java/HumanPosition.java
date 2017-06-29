@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class HumanPosition {
-    public static HashMap<Integer,Integer> humanMAP = new HashMap<>();
+    public static HashMap<Integer,Integer> humanMAP = new HashMap<Integer,Integer>();
     private static int CLK = 1;
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 

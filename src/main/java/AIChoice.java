@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class AIChoice {
-            public static ArrayList<Integer> map = new ArrayList<>();
+            public static ArrayList<Integer> map = new ArrayList<Integer>();
             private int CLK = 0;
             public static int Lit = 0;
             public static int Num = 0;
