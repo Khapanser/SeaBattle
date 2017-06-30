@@ -20,7 +20,7 @@ public class AIChoice {
         }
 
         Collections.shuffle(map);
-        System.out.println("Размер массива: "+ map.size());
+       // System.out.println("Размер массива: "+ map.size());
     /*    for (int j = 0; j < map.size(); j++) {
             System.out.println(j+" элемент!"+map.get(j));
 
@@ -34,14 +34,14 @@ public class AIChoice {
         ans = map.get(0);
         //TODO parsing "ans" for checking HIT (x%10--> line, x-(x%10) --> column)
         //a/b
-        Lit = ans/10;
-        System.out.println("AI LIT = "+ Lit);
+        Num = ans/10;
+        System.out.println("AI num = "+ Num);
         //a%b
-        Num = ans%10;
-        System.out.println("AI NUM = "+ Num);
+        Lit = ans%10;
+        System.out.println("AI lit = "+ Lit);
         map.remove(0);
         CLK++;
-        System.out.println("Now, CLK = "+ CLK);
+       // System.out.println("Now, CLK = "+ CLK);
        // return ans;
     }
 

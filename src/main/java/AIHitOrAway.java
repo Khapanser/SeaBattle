@@ -23,7 +23,7 @@ public class AIHitOrAway {
             HashMap.Entry<Integer, Integer> pair1 = iterator1.next();
             if (pair1.getKey() == a && pair1.getValue() == b) {
                 iterator1.remove();
-                System.out.println("HIT_3");
+                System.out.println("AI HIT YOU!");
                 return true;
             }
             /*else

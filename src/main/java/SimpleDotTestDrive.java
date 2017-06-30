@@ -18,7 +18,8 @@ public class SimpleDotTestDrive {
 
 
         //TEST START
-        ShipSetter ship = new ShipSetter(3);
+        int shiplength = 3;
+        ShipSetter ship = new ShipSetter(shiplength);
         SimpleDotCom dot = new SimpleDotCom();
         HashMap<Integer, Integer> map = ship.Coordinates();  //Записали в карту координаты
         dot.setLocationCells(map);    //Передали карту в класс ДОТ
@@ -27,6 +28,8 @@ public class SimpleDotTestDrive {
         String userGuess2 = null;
         boolean orient = ship.Orientation();
         boolean hitORaway;
+        int clk = 0;
+
         while (true)
         {
 
@@ -61,32 +64,50 @@ public class SimpleDotTestDrive {
             {
                 System.out.println("guess1int missing value --> Wrong number format");
             }
-            System.out.println(userGuess1 +" mean --> " +guess1int);
+          //  System.out.println(userGuess1 +" mean --> " +guess1int);
 
             dot.checkYourself(guess1int,guess2int, orient);
 
 //Part for AI
             System.out.println("AI trying..");
+
+            // 0.5 second delay:
+            try {
+                Thread.sleep(500);
+                // any action
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             aichoice.GetValueTest(AIChoice.map);
             AIHitOrAway aihitoraway = new AIHitOrAway();
             //TODO Rebuild
 
-            hitORaway = aihitoraway.AIHit(AIChoice.Lit, AIChoice.Num, HumanPosition.humanMAP);
-            if (hitORaway)
-                    System.out.println("AI_HIT!");
+            hitORaway = aihitoraway.AIHit(AIChoice.Num, AIChoice.Lit, HumanPosition.humanMAP);
+            if (hitORaway) {
+                System.out.println("AI HIT YOU!");
+                clk++;
+            }
             else
-                System.out.println("AI_AWAY!");
+                System.out.println("AI away!");
+
+
+            if (clk == shiplength)
+            {
+                System.out.println("YOU LOSE!");
+                break;
+            }
 
             //Check if human lose:
             if (!aichoice.ArrayNotNullChecker())
             {
-                System.out.println("Lose!");
+                System.out.println("YOU LOSE!");
                 break;
             }
             //TODO пустой ли массив
             if (dot.locationCells.isEmpty())
             {
-                System.out.println("Win!");
+                System.out.println("YOU WIN!");
                 break;
             }
 //ВРЕМЕННЫЙ КОД

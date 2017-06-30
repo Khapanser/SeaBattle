@@ -26,12 +26,12 @@ class SimpleDotCom {
                 HashMap.Entry<Integer, Integer> pair1 = iterator1.next();
                 if (pair1.getKey() == a && pair1.getValue() == b) {
                     iterator1.remove();
-                    System.out.println("HIT_1");
+                    System.out.println("YOU HIT AI!");
                     return "HIT";
                 }
                 else
                 {
-                    System.out.println("AWAY_1");
+                    System.out.println("away...");
                     return "AWAY" ;
                 }
             }
@@ -43,12 +43,12 @@ class SimpleDotCom {
                 HashMap.Entry<Integer, Integer> pair1 = iterator1.next();
                 if (pair1.getKey() == b && pair1.getValue() == a) {
                     iterator1.remove();
-                    System.out.println("HIT_2");
+                    System.out.println("YOU HIT AI!");
                     return "HIT";
                 }
                 else
                 {
-                    System.out.println("AWAY_2");
+                    System.out.println("away...");
                     return "AWAY" ;
                 }
             }

@@ -24,12 +24,12 @@ public class ShipSetter {
             i = (int) (Math.random() * 3);
             if (i == 1) {
                 ans = true;     //Horizontal
-                System.out.println("Horizontal");
+            //    System.out.println("Horizontal");
                 trigger = true;
             }
             else if (i == 2 ){
                 ans = false;    //Vertical
-                System.out.println("Vertical");
+            //    System.out.println("Vertical");
                 trigger = true;
             }
         }
@@ -45,7 +45,7 @@ public class ShipSetter {
             ArrayList<Integer> list = new ArrayList<Integer>();
             for (int i = 0; i < ShipLength; i++) {
                 list.add(start + i);
-                System.out.println((i + 1) + "th element -->" + (start + i));
+                //System.out.println((i + 1) + "th element -->" + (start + i));
             }
             return list;
 
@@ -60,7 +60,7 @@ public class ShipSetter {
             if (start > 0)                            //check not zero
                 trigger = true;
         }
-        System.out.println("start = "+start);
+        System.out.println("well, now attack AI");
         return start;
     }
 
@@ -72,7 +72,7 @@ public class ShipSetter {
         int b = this.CheckLocations_1();
             for (int a: CheckLocations_X(ShipLength)) {
                map.put(a,b);
-               System.out.println("цель - "+a+" / "+b); //
+            //   System.out.println("цель - "+a+" / "+b); //
             }
             return map;
     }
