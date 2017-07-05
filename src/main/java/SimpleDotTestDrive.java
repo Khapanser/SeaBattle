@@ -27,7 +27,7 @@ public class SimpleDotTestDrive {
         String userGuess1 = null;
         String userGuess2 = null;
         boolean orient = ship.Orientation();
-        boolean hitORaway;
+        boolean hitORaway = true;
         int clk = 0;
 
         while (true)
@@ -69,27 +69,30 @@ public class SimpleDotTestDrive {
             dot.checkYourself(guess1int,guess2int, orient);
 
 //Part for AI
-            System.out.println("AI trying..");
+            while (hitORaway) {
+                System.out.println("AI trying..");
+                // 0.5 second delay:
+                try {
+                    Thread.sleep(500);
+                    // any action
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
-            // 0.5 second delay:
-            try {
-                Thread.sleep(500);
-                // any action
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                aichoice.GetValueTest(AIChoice.map);
+                AIHitOrAway aihitoraway = new AIHitOrAway();
+                //TODO Rebuild
+
+                hitORaway = aihitoraway.AIHit(AIChoice.Num, AIChoice.Lit, HumanPosition.humanMAP);
+                if (hitORaway) {
+                    System.out.println("AI HIT YOU!");
+                    clk++;
+                } else {
+                    System.out.println("AI away!");
+                    hitORaway = false;
+                }
             }
-
-            aichoice.GetValueTest(AIChoice.map);
-            AIHitOrAway aihitoraway = new AIHitOrAway();
-            //TODO Rebuild
-
-            hitORaway = aihitoraway.AIHit(AIChoice.Num, AIChoice.Lit, HumanPosition.humanMAP);
-            if (hitORaway) {
-                System.out.println("AI HIT YOU!");
-                clk++;
-            }
-            else
-                System.out.println("AI away!");
+            hitORaway =true;
 
 
             if (clk == shiplength)
