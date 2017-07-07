@@ -22,7 +22,7 @@ public class LitToNum {
         map.put("i",9);
         map.put("j",10);
     }
-
+    //class to convert Literal to Number
     public int Replacer (String x)
     {
 
@@ -34,6 +34,18 @@ public class LitToNum {
         }
         //TODO bad return condition
         return 0;
+    }
+    //class to convert Number to Literal
+    public String ReplaceTheNumToLit(int x)
+    {
+        for (HashMap.Entry<String, Integer> pair : LitToNum.map.entrySet())
+        {
+            if (pair.getValue().equals(x))
+                return pair.getKey();
+
+        }
+        //TODO bad return condition
+        return null;
     }
 
 
